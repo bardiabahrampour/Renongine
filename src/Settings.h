@@ -2,7 +2,7 @@
 #include <pugixml.hpp>
 //XML Based Settings
 
-typedef enum Quality {
+enum class Quality {
 	VERY_LOW,
 	LOW,
 	MEDIUM,

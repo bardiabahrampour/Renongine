@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseApplication.h" />
+    <ClInclude Include="error_messages.h" />
     <ClInclude Include="output.h" />
     <ClInclude Include="Settings.h" />
   </ItemGroup>

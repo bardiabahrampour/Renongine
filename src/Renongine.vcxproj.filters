@@ -47,6 +47,9 @@
     <ClInclude Include="output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="error_messages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="settings.xml">

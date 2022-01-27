@@ -1,6 +1,7 @@
 #include "Settings.h"
 #include "output.h"
 #include <raylib.h>
+#include "error_messages.h"
 //settings data structure constants
 #define SETTINGS_FILE_NAME "settings.xml"
 #define ROOT			   "settings"
@@ -10,14 +11,16 @@
 #define HEIGHT			   "height"
 #define TITLE			   "title"
 
-//load settings files from the disk and load them into the settings structs
+//load settings files from the disk and load them into the settings structure
 void
 Settings::get_settings() {
 	if (!doc.load_file(SETTINGS_FILE_NAME)) {
-		output::error("Failed to read settings file", ERROR);
-		read_default();
+		output::error(SETTINGS_READ_FAILED, ERROR);
+		this->read_default();
 	}
-
+	this->width = this->get_value(GENERAL, WIDTH).as_int();
+	this->height = this->get_value(GENERAL, HEIGHT).as_int();
+	this->fps = this->get_value(GENERAL, FPS).as_int();
 }
 
 //update settings incase of a gui call
@@ -48,6 +51,6 @@ Settings::read_default() {
 	this->height = GetMonitorHeight(0);
 	this->build_str = "null";
 	this->fullscreen = true;
-	this->graphics_setting = LOW;
+	this->graphics_setting = Quality::LOW;
 	// to be continued...
 }

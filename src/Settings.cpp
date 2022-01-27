@@ -10,6 +10,8 @@
 #define WIDTH			   "width"
 #define HEIGHT			   "height"
 #define TITLE			   "title"
+#define FULLSCREEN         "fullscreen"
+#define GRAPHICS           "graphics"
 
 //load settings files from the disk and load them into the settings structure
 void
@@ -21,6 +23,9 @@ Settings::get_settings() {
 	this->width = this->get_value(GENERAL, WIDTH).as_int();
 	this->height = this->get_value(GENERAL, HEIGHT).as_int();
 	this->fps = this->get_value(GENERAL, FPS).as_int();
+	this->fullscreen = this->get_value(GENERAL, FULLSCREEN).as_bool();
+	this->title = this->get_value(GENERAL, TITLE).as_string();
+	this->graphics_setting = get_enum(this->get_value(GENERAL, GRAPHICS).as_int());
 }
 
 //update settings incase of a gui call
@@ -52,5 +57,20 @@ Settings::read_default() {
 	this->build_str = "null";
 	this->fullscreen = true;
 	this->graphics_setting = Quality::LOW;
+	this->title = "game";
 	// to be continued...
+}
+
+//quick helper function
+Quality get_enum(int i) {
+	switch (i)
+	{
+	case 1: return Quality::LOW; break;
+	case 2: return Quality::MEDIUM; break;
+	case 3: return Quality::HIGH; break;
+	case 0: return Quality::VERY_LOW; break;
+	default:
+		break;
+		return Quality::VERY_LOW;
+	}
 }

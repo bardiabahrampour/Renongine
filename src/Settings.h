@@ -13,7 +13,7 @@ struct Settings
 {
 	int width, height;
 	int fps;
-	std::string build_str;
+	std::string build_str,title;
 	Quality graphics_setting;
 	bool fullscreen;
 

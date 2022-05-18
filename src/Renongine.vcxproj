@@ -147,17 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseApplication.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="output.cpp" />
     <ClCompile Include="pugixml.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseApplication.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="error_messages.h" />
     <ClInclude Include="output.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="settings.xml" />

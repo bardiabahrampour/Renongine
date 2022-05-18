@@ -64,3 +64,4 @@ typedef struct tagBITMAPINFOHEADER {
 #include <objbase.h>
 #include <mmreg.h>
 #include <mmsystem.h>
+#include <raylib.h>

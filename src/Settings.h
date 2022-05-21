@@ -8,14 +8,13 @@ struct Settings {
   int width, height;
   int fps;
   std::string title;
-  const char* buildstr; //const string for build strings, unmodifiable
   Quality graphics_setting;
   bool fullscreen;
 
   void get_settings();
   // template for type specific functions
-  template <typename xml_value>
-  void update(xml_value value);
+  template<typename xml_value>
+  void update(const char* _property, xml_value value);
 
  private:
   void read_default();

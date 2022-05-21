@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="buildver.h" />
     <ClInclude Include="error_messages.h" />
     <ClInclude Include="output.h" />
     <ClInclude Include="Settings.h" />

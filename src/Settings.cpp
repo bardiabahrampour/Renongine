@@ -39,8 +39,8 @@ void Settings::get_settings() {
 }
 
 // update settings incase of a gui call
-template <typename xml_value>
-void Settings::update(xml_value value) {}
+template<typename xml_value>
+void Settings::update(const char* _property, xml_value value) {}
 
 pugi::xml_text Settings::get_value(std::string root, std::string child) {
   return doc.root().child(root.c_str()).child(child.c_str()).text();

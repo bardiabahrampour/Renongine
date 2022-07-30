@@ -1,9 +1,0 @@
-<general>
-	<width>1920</width>
-	<height>1080</height>
-	<title>Test</title>
-	<fps>60</fps>
-	<graphics>3</graphics>
-	<fullscreen>true</fullscreen>
-	<build>0.0.1 PreAlpha</build>
-</general>

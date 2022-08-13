@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <functional>
 #include <raylib.h>
+#include <vector>
 #include <string>
 
 constexpr uint8_t FPS = 60;
@@ -14,7 +15,7 @@ class __declspec(dllexport) Application {
   std::string app_name{};
   std::function<void()> loop_callback = nullptr;
   Color background_color = RAYWHITE;
-  std::vector<Component> components;
+  std::vector<Component*> components;
   void Init();
 
 public:

@@ -1,4 +1,5 @@
 #include <Application.h>
+#include <TextLabel.h>
 
 struct App {
   App();
@@ -7,30 +8,21 @@ private:
   Application app;
   int x = 0, y = 0;
   bool l = false;
+  TextLabel txt;
   void loop();
 };
 
-App::App() : app(800, 600, "Shit") {
+App::App() : app(800, 600, "App"), txt("PlaceHolder", RED, 1, Vector2{380,280}) {
   this->app.SetLoop(std::bind(&App::loop, this));
+  this->app.AddComponent(txt);
+  this->txt.Show();
   this->app.Start();
 }
 
 void App::loop() {
-  if (l) {
-    x -= 4;
-    y -= 4;
-  } else {
-    x += 2;
-    y += 2;
-  }
-
-  DrawText("DVD", x, y, 30, BLACK);
-
-  if (x >= 500) {
-    l = true;
-  } else if (x <= 0) {
-    l = false;
-  }
+  txt.SetTxt(std::to_string(x));
+  x++;
+  txt.SetSize(x);
 }
 
 int main() {

@@ -1,17 +1,27 @@
 #include "TextLabel.h"
 
-TextLabel::TextLabel(std::string str, Vector2 size, Color col, int font_size,
-                     Vector2 pos, int rot) {
+TextLabel::TextLabel(std::string str, Color col, int font_size, Vector2 pos) {
   this->str = str;
-  this->size = size;
   this->color = col;
   this->font_size = font_size;
-  this->position = pos;
-  this->rotate = rot;
+  this->SetPosition(pos);
+  this->visible = true;
 }
 
-void TextLabel::Hide() { this->visbile = false; }
+void TextLabel::SetTxt(std::string p_str) { this->str = p_str; }
 
-void TextLabel::Show() { this->visbile = true; }
+void TextLabel::Render() {
+  if (IsVisible()) {
+    DrawText(str.c_str(), position.x, position.y, font_size, color);
+  }
+}
 
-void TextLabel::UpdateStr(std::string str) { this->str = str; }
+int TextLabel::GetSize() { return this->font_size; }
+
+void TextLabel::SetSize(int p_size) { this->font_size = p_size; }
+
+std::string TextLabel::GetTxt() { return this->str; }
+
+Color TextLabel::GetColor() { return this->color; }
+
+void TextLabel::SetColor(Color clr) { this->color = clr; }

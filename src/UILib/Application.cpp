@@ -28,9 +28,10 @@ void Application::Start() {
 
     // Render Components
     for (auto c : this->components) {
-      if (c.IsVisible()) {
-        c.Render();
-      }
+
+        //OutputDebugStringA("rend\n");
+        c->Render();
+
     }
 
     EndDrawing();
@@ -40,7 +41,8 @@ void Application::Start() {
 void Application::Kill() { CloseWindow(); }
 
 void Application::AddComponent(Component &cmp) {
-  this->components.push_back(cmp);
+  OutputDebugStringA("added cmp\n");
+  this->components.push_back(&cmp);
 }
 
 Application::~Application() { this->Kill(); }

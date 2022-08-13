@@ -1,21 +1,21 @@
 #pragma once
 #include <raylib.h>
 
+#include "Component.h"
 #include <string>
 
-class TextLabel {
+class __declspec(dllexport) TextLabel : public Component {
   std::string str;
-  Vector2 size;
   Color color;
   int font_size;
-  Vector2 position;
-  int rotate;
-  bool visbile;
 
 public:
-  TextLabel(std::string str, Vector2 size, Color col, int font_size,
-            Vector2 pos, int rot);
-  void Hide();
-  void Show();
-  void UpdateStr(std::string str);
+  TextLabel(std::string str, Color col, int font_size, Vector2 pos);
+  void SetTxt(std::string p_str);
+  void Render() override;
+  int GetSize();
+  void SetSize(int p_size);
+  std::string GetTxt();
+  Color GetColor();
+  void SetColor(Color clr);
 };

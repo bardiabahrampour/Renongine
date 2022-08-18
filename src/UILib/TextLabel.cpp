@@ -1,6 +1,7 @@
 #include "TextLabel.h"
 
-TextLabel::TextLabel(std::string str, Color col, int font_size, Vector2 pos) {
+TextLabel::TextLabel(std::string str, Color col, int font_size, Vector2 pos)
+    : Component(false) {
   this->str = str;
   this->color = col;
   this->font_size = font_size;

@@ -16,3 +16,5 @@ void Component::SetPosition(int x, int y) {
 }
 
 Vector2 Component::GetPosition() { return this->position; }
+
+Component::Component(bool p_hvr) { this->hoverable = p_hvr; }

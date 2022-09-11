@@ -12,9 +12,7 @@ TextLabel::TextLabel(std::string str, Color col, int font_size, Vector2 pos)
 void TextLabel::SetTxt(std::string p_str) { this->str = p_str; }
 
 void TextLabel::Render() {
-  if (IsVisible()) {
-    DrawText(str.c_str(), position.x, position.y, font_size, color);
-  }
+  DrawText(str.c_str(), position.x, position.y, font_size, color);
 }
 
 int TextLabel::GetSize() { return this->font_size; }

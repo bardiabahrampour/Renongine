@@ -30,7 +30,7 @@ void Application::Start() {
     for (auto c : this->components) {
 
         //OutputDebugStringA("rend\n");
-        c->Render();
+        c->MainRender();
 
     }
 
